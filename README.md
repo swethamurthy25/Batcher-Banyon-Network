@@ -143,3 +143,78 @@ if __name__ == "__main__":
     main()
 ```
 
+### Manual Test conducted and its expected values:
+
+![image](https://github.com/swethamurthy25/Batcher-Banyon-Network/assets/112581595/91695dca-4b39-49c6-8574-a8645c4d97eb)
+
+![image](https://github.com/swethamurthy25/Batcher-Banyon-Network/assets/112581595/954e5563-d735-4df6-8795-6689e8c145af)
+
+
+### Expected and Desired Output:
+
+![image](https://github.com/swethamurthy25/Batcher-Banyon-Network/assets/112581595/1b834579-bb10-4fdc-9067-fd208e102bb6)
+
+![image](https://github.com/swethamurthy25/Batcher-Banyon-Network/assets/112581595/6526ec9f-a17a-4d28-8ac4-9d7c13761a75)
+
+![image](https://github.com/swethamurthy25/Batcher-Banyon-Network/assets/112581595/345f5e87-46a0-47e3-b7e2-6e1df0f4ad25)
+
+
+### Batcher Sorter
+
+The batcher sorter will get the input value from the user generate random numbers based on the input value and then sort the numbers in ascending order. 
+Below is the source code for the batcher sorter and its working:
+
+```python
+import random
+input_value = []
+get_user_input = int(input("Enter the input value between 0 to 15: \n"))
+#Generate random numbers   
+for r in range(get_user_input):
+    random_number = random.randint(0,15)
+    while random_number in input_value:
+        random_number = random.randint(0,15)
+    input_value.append(random_number)
+      
+print("The Random Numbers are : ")
+print(input_value)
+
+# Batcher Sorter
+input_value.sort()
+input_dict ={} 
+print("Sorting the randomly generated number in ascending order:")
+for r in range(get_user_input):
+    input_dict[r]= input_value[r]
+    print("", input_dict[r])
+```
+
+### Discussion of Results and Outcome:
+
+I have created an 8-by-eight (8-by-eight) Batcher Banyan Network. When we feed the sorter integer input values (0-7) it sorts the number of inputs and passes it to the "Banyan Network." The network then changes to the next network based on binary values (0 and 1). The same applies to a 16 by 16 (16X16) network, with the exception that it switches between two 8x8 networks. 
+
+* In the program, the random function library has been included.
+* Random numbers will be generated based on the user input using the random function library.
+* In the main function, first we must get the number of input values from the user, and it is stored in the variable named “get_user_input”.
+* The input value can range from 0 to 15, which implies it should not be 0 and should not exceed 15.
+* The user input is then passed to the function random.randint(0,15), which generates random numbers between 0 and 15.
+* The generated random numbers are then stored in the input value [] array list.
+* Then we used the sort () function to sort the randomly generated numbers in ascending order, and the sorted values were stored in the input_dict[r] dictionary.
+* Then we have created an “entry_point” dictionary which stores the input value associated with each port.
+
+#### Binary conversion and path generation:
+
+* The bin() function was used to convert the sorted random numbers to their respective binary format, and the binary value of each number was stored in the variable Y.
+* The binary values and initial lanes will be passed to the functions that determine the network in which the data transfer will take place.
+* Each path here will take the output of the previous path as an input and based on that the destination will be chosen for the next stage.
+* In the 16X16 network, we have a total of 4 switches. Once the binary equivalent numbers are generated, the batcher banyan network starts its execution.
+
+### Advantages of this code
+* It accepts up to 16 numbers from the user in a dynamic manner.
+* Accepts any input >= 0 and <= 15
+
+__________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
